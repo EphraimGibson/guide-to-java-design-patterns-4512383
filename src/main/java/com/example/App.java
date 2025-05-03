@@ -6,11 +6,12 @@ public class App {
 
         var trafficLight = new TrafficLight();
         var pedestrianCrossingLight = new PedestrianCrossingLight();
+        var mediator = new Mediator(trafficLight, pedestrianCrossingLight);
 
         trafficLight.changeToAmber();
-        trafficLight.changeToGreen(pedestrianCrossingLight);
+        mediator.trafficLightchangeToGreen();
         trafficLight.changeToAmber();
-        trafficLight.changeToRed(pedestrianCrossingLight);
+        mediator.trafficLightchangeToRed();
 
 
     }
